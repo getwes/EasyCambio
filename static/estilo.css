@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
-h1{
-    font-family: 'Poppins', sans-serif;
+ h1{
+    font-family: 'Shadows Into Light', sans-serif;
   }
 
 body {
@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #413d3d;
+    background: #292828;
 }
 
 .container {
@@ -36,6 +36,7 @@ body {
 
 .form-image img {
     width: 31rem;
+   
 }
 
 .form {
@@ -54,22 +55,6 @@ body {
     justify-content: space-between;
 }
 
-.login-button {
-    display: flex;
-    align-items: center;
-}
-
-.login-button button {
-    border: none;
-    background-color: #000000;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-button button:hover {
-    background-color: #6b63fff1;
-}
 
 .login-button button a {
     text-decoration: none;
@@ -82,7 +67,7 @@ body {
     display: block;
     width: 5rem;
     height: 0.3rem;
-    background-color: #000000;
+    background-color: #d6d33f;
     margin: 0 auto;
     position: absolute;
     border-radius: 10px;
@@ -159,7 +144,7 @@ padding: 16px 20px;
  color: #fff;
  letter-spacing: 3px;
  line-height: 1;
- box-shadow: 6px 0px 0px #00e6f6;
+ box-shadow: 6px 0px 0px #d6d33f;
  outline: transparent;
  position: relative;
 }
@@ -178,7 +163,7 @@ button::after {
  left: 0;
  right: 0;
  bottom: 0;
- background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #2d30fd 5%);
+ background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #d6d33f 5%);
  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
  clip-path: var(--slice-0);
 }
@@ -246,7 +231,7 @@ button:hover::after {
 }
 
 .continue-button button:hover {
-    background-color: #6b63fff1;
+    background-color: #d6d33f;
 }
 
 .continue-button button a {
