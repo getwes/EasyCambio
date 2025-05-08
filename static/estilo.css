@@ -1,28 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Shadows+Into+Light&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
- h1{
+
+h1 {
     font-family: 'Shadows Into Light', sans-serif;
-  }
+}
 
 body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #292828;
+    padding: 1rem;
 }
 
 .container {
-    width: 80%;
-    height: 80vh;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
+    flex-direction: row;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .form-image {
@@ -30,13 +37,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
+    background-color: #000;
     padding: 1rem;
 }
 
 .form-image img {
-    width: 31rem;
-   
+    width: 100%;
+    max-width: 31rem;
+    height: auto;
+    border-radius: 16px;
 }
 
 .form {
@@ -44,22 +53,21 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding: 2rem;
     background-color: #fff;
-    padding: 3rem;
 }
 
 .form-header {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-
-.login-button button a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #fff;
+.form-header h1 {
+    position: relative;
+    text-align: center;
 }
 
 .form-header h1::after {
@@ -68,8 +76,7 @@ body {
     width: 5rem;
     height: 0.3rem;
     background-color: #d6d33f;
-    margin: 0 auto;
-    position: absolute;
+    margin: 0.5rem auto 0;
     border-radius: 10px;
 }
 
@@ -77,22 +84,22 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem 0;
+    gap: 1rem;
 }
 
 .input-box {
+    flex: 1 1 45%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.1rem;
 }
 
 .input-box input {
-    margin: 0.6rem 0;
+    margin-top: 0.5rem;
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .input-box input:hover {
@@ -105,7 +112,7 @@ body {
 
 .input-box label,
 .gender-title h6 {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: #000000c0;
 }
@@ -117,8 +124,8 @@ body {
 .gender-group {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.62rem;
-    padding: 0 .5rem;
+    margin-top: 1rem;
+    gap: 1rem;
 }
 
 .gender-input {
@@ -138,61 +145,92 @@ body {
 
 .continue-button button {
     width: 100%;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     border: none;
     background-color: #d6d33f;
-    padding: 0.62rem;
-    border-radius: 5px;
+    padding: 0.75rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .continue-button button:hover {
     background-color: #000000f1;
+    color: #fff;
 }
 
 .continue-button button a {
     text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
     color: #fff;
 }
 
+.caixa-info {
+    border-left: 5px solid #d6d33f;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin: 9px 0;
+    font-family: monospace;
+    white-space: pre-line;
+    font-size: 0.85rem;
+}
 
-@media screen and (max-width: 1330px) {
-    .form-image {
-        display: none;
-    }
+/* RESPONSIVO - TABLET */
+@media screen and (max-width: 992px) {
     .container {
-        width: 50%;
+        flex-direction: column;
+        max-width: 90%;
     }
+
+    .form-image {
+        width: 100%;
+        padding: 1rem;
+    }
+
     .form {
         width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-box {
+        width: 100%;
+    }
+
+    .gender-group {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
-@media screen and (max-width: 1064px) {
-    .container {
-        width: 90%;
-        height: auto;
+/* RESPONSIVO - CELULAR */
+@media screen and (max-width: 576px) {
+    body {
+        padding: 0.5rem;
     }
-    .input-group {
-        flex-direction: column;
-        z-index: 5;
-        padding-right: 5rem;
-        max-height: 10rem;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
+
+    .form-header h1::after {
+        width: 3rem;
     }
-    .gender-inputs {
-        margin-top: 2rem;
+
+    .continue-button button {
+        font-size: 0.9rem;
     }
-    .gender-group {
-        flex-direction: column;
+
+    .input-box input {
+        font-size: 0.85rem;
     }
-    .gender-title h6 {
-        margin: 0;
+
+    .form-image img {
+        width: 100%;
+        max-width: 20rem;
     }
-    .gender-input {
-        margin-top: 0.5rem;
+
+    .caixa-info {
+        font-size: 0.75rem;
     }
 }

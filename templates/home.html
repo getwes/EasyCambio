@@ -26,16 +26,23 @@
                 <div class="input-group">
 
                     <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        <label for="password">pais</label>
+                        <input id="password" type="password" name="password" placeholder="Digite a sigla do pais" >
                     </div>
-
 
                     <div class="input-box">
-                        <label for="confirmPassword">Confirme sua Senha</label>
-                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
+                        <label for="password">valor</label>
+                        <input id="password" type="password" name="password" placeholder="Digite o valor" >
                     </div>
 
+                    <div class="input-box">
+                        <label for="password">pais</label>
+                        <input id="password" type="password" name="password" placeholder="Digite a sigla do pais" >
+                    </div>
+
+                </div>
+                <div class="caixa-info">
+                    {{ resultado }}
                 </div>
 
                 <div class="gender-inputs">
@@ -43,13 +50,16 @@
                         <h1>Conversão</h1>
                     </div>
 
-                <div class="continue-button">
-                    <button><a href="#">Continuar</a> </button>
-                </div>
-                <div class="continue-button">
-                    <button><a href="#">Continuar</a> </button>
-                </div>
+            
             </form>
+            <div class="continue-button">
+                <button><a href="#">Converter</a> </button>
+            </div>
+            <form action="/envia_email" method="POST">
+            <div class="continue-button">
+                <button><a href="#">Via-email</a> </button>
+            </div>
+        </form>
         </div>
     </div>
 </body>
