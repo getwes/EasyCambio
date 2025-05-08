@@ -26,20 +26,46 @@
                 <div class="input-group">
 
                     <div class="input-box">
-                        <label for="password">pais</label>
-                        <input id="password" type="password" name="password" placeholder="Digite a sigla do pais" >
+                        <label for="pais1">País</label>
+                        <input id="pais1" type="text" name="pais" list="lista-paises" placeholder="Digite a sigla do país">
+                        
+                        <datalist id="lista-paises">
+                            <option value="BR"> <!-- Brasil -->
+                            <option value="US"> <!-- Estados Unidos -->
+                            <option value="FR"> <!-- França -->
+                            <option value="DE"> <!-- Alemanha -->
+                            <option value="JP"> <!-- Japão -->
+                            <option value="IT"> <!-- Itália -->
+                            <option value="PT"> <!-- Portugal -->
+                            <option value="AR"> <!-- Argentina -->
+                            <option value="MX"> <!-- México -->
+                            <option value="ES"> <!-- Espanha -->
+                        </datalist>
                     </div>
-
+                    
                     <div class="input-box">
-                        <label for="password">valor</label>
-                        <input id="password" type="password" name="password" placeholder="Digite o valor" >
+                        <label for="pais2">País</label>
+                        <input id="pais2" type="text" name="pais" list="lista-paises" placeholder="Digite a sigla do país">
+                        
+                        <datalist id="lista-paises">
+                            <option value="BR"> <!-- Brasil -->
+                            <option value="US"> <!-- Estados Unidos -->
+                            <option value="FR"> <!-- França -->
+                            <option value="DE"> <!-- Alemanha -->
+                            <option value="JP"> <!-- Japão -->
+                            <option value="IT"> <!-- Itália -->
+                            <option value="PT"> <!-- Portugal -->
+                            <option value="AR"> <!-- Argentina -->
+                            <option value="MX"> <!-- México -->
+                            <option value="ES"> <!-- Espanha -->
+                        </datalist>
                     </div>
-
+                    
                     <div class="input-box">
-                        <label for="password">pais</label>
-                        <input id="password" type="password" name="password" placeholder="Digite a sigla do pais" >
+                        <label for="valor">Valor</label>
+                        <input id="valor" type="number" name="valor" placeholder="Digite o valor">
                     </div>
-
+                    
                 </div>
                 <div class="caixa-info">
                     {{ resultado }}
