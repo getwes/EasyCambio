@@ -8,6 +8,8 @@ def homepage():
     return render_template("home.html")
 
 @app.route("/envia_email", methods=["POST"])
-def blog():
+def email():
     return render_template("cadastro_nome_email.html")
+
+
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/estilo_cadastro.css">
-    <title>conversão via E-mail</title>
+    <title>Formulário</title>
 </head>
 
 <body>
@@ -24,38 +24,34 @@
                 </div>
 
                 <div class="input-group">
+
                     <div class="input-box">
-                        <label for="firstname">Primeiro Nome</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome">
-                    </div>
-                    <br>
-                    <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail">
+                        <label for="password">pais</label>
+                        <input id="password" type="password" name="password" placeholder="Digite a sigla do pais" >
                     </div>
 
+                    <div class="input-box">
+                        <label for="password">valor</label>
+                        <input id="password" type="password" name="password" placeholder="Digite o valor" >
+                    </div>      
 
-                </div>
+                </div>    
 
                 <div class="gender-inputs">
                     <div class="gender-title">
                         <h1>Conversão</h1>
                     </div>
 
-                    
-                </div>
-               
-                <br>
-                <div class="continue-button">
-                    <button><a href="#">Enviar e-mail</a> </button>
-                </div>
-                 <br>
-                <div class="continue-button">
-                    <form action="/" method="POST">
-                        <button><a href="#">Voltar a Home</a> </button>
-                    </form> 
-                </div>
+            
             </form>
+            <div class="continue-button">
+                <button><a href="#">Converter</a> </button>
+            </div>
+            
+            <div class="continue-button">
+                <button> <a href="{{ url_for('homepage') }}">Voltar à Home</a></button>
+            </div>
+        
         </div>
     </div>
 </body>
