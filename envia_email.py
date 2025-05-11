@@ -7,7 +7,7 @@ email_remetente = 'ayrtonsenna0110@gmail.com'
 senha = 'fzro zxfk zhnq bfoq' 
 
 
-email_destinatario = 'pierre.s3@hotmail.com'
+email_destinatario = 'wesleyfreire1707@gmail.com'
 
 
 mensagem = MIMEMultipart()

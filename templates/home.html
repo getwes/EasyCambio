@@ -15,7 +15,7 @@
             <img src="{{ url_for('static', filename='img/mao_cartao.jpg') }}" alt="Descrição da imagem">
         </div>
         <div class="form">
-            <form action="#">
+            
                 <div class="form-header">
                     <div class="title">
                         <h1>EasyCâmbio</h1>
@@ -26,38 +26,113 @@
                 <div class="input-group">
 
                     <div class="input-box">
+                        <form action="/converter" method="POST">
                         <label for="pais1">País</label>
-                        <input id="pais1" type="text" name="pais" list="lista-paises" placeholder="Digite a sigla do país">
+                        <input id="pais1" type="text" name="de" list="lista-paises" placeholder="Digite a sigla do país">
                         
                         <datalist id="lista-paises">
-                            <option value="BR"> <!-- Brasil -->
-                            <option value="US"> <!-- Estados Unidos -->
-                            <option value="FR"> <!-- França -->
-                            <option value="DE"> <!-- Alemanha -->
-                            <option value="JP"> <!-- Japão -->
-                            <option value="IT"> <!-- Itália -->
-                            <option value="PT"> <!-- Portugal -->
-                            <option value="AR"> <!-- Argentina -->
-                            <option value="MX"> <!-- México -->
-                            <option value="ES"> <!-- Espanha -->
+                            <option value="BRL">Real - Brasil</option>
+                            <option value="USD">Dólar Americano - Estados Unidos</option>
+                            <option value="EUR">Euro - União Europeia (França, Alemanha, Itália, Espanha, Portugal, etc.)</option>
+                            <option value="JPY">Iene - Japão</option>
+                            <option value="ARS">Peso Argentino - Argentina</option>
+                            <option value="MXN">Peso Mexicano - México</option>
+                            <option value="GBP">Libra Esterlina - Reino Unido</option>
+                            <option value="CAD">Dólar Canadense - Canadá</option>
+                            <option value="AUD">Dólar Australiano - Austrália</option>
+                            <option value="CNY">Yuan - China</option>
+                            <option value="CHF">Franco Suíço - Suíça</option>
+                            <option value="INR">Rupia - Índia</option>
+                            <option value="RUB">Rublo - Rússia</option>
+                            <option value="ZAR">Rand - África do Sul</option>
+                            <option value="KRW">Won - Coreia do Sul</option>
+                            <option value="SEK">Coroa - Suécia</option>
+                            <option value="NOK">Coroa - Noruega</option>
+                            <option value="DKK">Coroa - Dinamarca</option>
+                            <option value="SGD">Dólar - Singapura</option>
+                            <option value="HKD">Dólar - Hong Kong</option>
+                            <option value="TRY">Lira - Turquia</option>
+                            <option value="SAR">Riyal - Arábia Saudita</option>
+                            <option value="AED">Dirham - Emirados Árabes Unidos</option>
+                            <option value="ILS">Shekel - Israel</option>
+                            <option value="EGP">Libra - Egito</option>
+                            <option value="NGN">Naira - Nigéria</option>
+                            <option value="CLP">Peso - Chile</option>
+                            <option value="PEN">Sol - Peru</option>
+                            <option value="COP">Peso - Colômbia</option>
+                            <option value="UYU">Peso - Uruguai</option>
+                            <option value="PYG">Guarani - Paraguai</option>
+                            <option value="VES">Bolívar - Venezuela</option>
+                            <option value="BOB">Boliviano - Bolívia</option>
+                            <option value="DOP">Peso - República Dominicana</option>
+                            <option value="CRC">Colón - Costa Rica</option>
+                            <option value="GTQ">Quetzal - Guatemala</option>
+                            <option value="HNL">Lempira - Honduras</option>
+                            <option value="NIO">Córdoba - Nicarágua</option>
+                            <option value="BZD">Dólar - Belize</option>
+                            <option value="JMD">Dólar - Jamaica</option>
+                            <option value="BBD">Dólar - Barbados</option>
+                            <option value="TTD">Dólar - Trinidad e Tobago</option>
+                            <option value="BSD">Dólar - Bahamas</option>
+                            <option value="BMD">Dólar - Bermudas</option>
+                            <option value="KYD">Dólar - Ilhas Cayman</option>
+                            <option value="GYD">Dólar - Guiana</option>
+                            <option value="SRD">Dólar - Suriname</option>
                         </datalist>
                     </div>
                     
                     <div class="input-box">
                         <label for="pais2">País</label>
-                        <input id="pais2" type="text" name="pais" list="lista-paises" placeholder="Digite a sigla do país">
+                        <input id="pais2" type="text" name="para" list="lista-paises" placeholder="Digite a sigla do país">
                         
                         <datalist id="lista-paises">
-                            <option value="BR"> <!-- Brasil -->
-                            <option value="US"> <!-- Estados Unidos -->
-                            <option value="FR"> <!-- França -->
-                            <option value="DE"> <!-- Alemanha -->
-                            <option value="JP"> <!-- Japão -->
-                            <option value="IT"> <!-- Itália -->
-                            <option value="PT"> <!-- Portugal -->
-                            <option value="AR"> <!-- Argentina -->
-                            <option value="MX"> <!-- México -->
-                            <option value="ES"> <!-- Espanha -->
+                            <option value="BRL">Real - Brasil</option>
+                            <option value="USD">Dólar Americano - Estados Unidos</option>
+                            <option value="EUR">Euro - União Europeia (França, Alemanha, Itália, Espanha, Portugal, etc.)</option>
+                            <option value="JPY">Iene - Japão</option>
+                            <option value="ARS">Peso Argentino - Argentina</option>
+                            <option value="MXN">Peso Mexicano - México</option>
+                            <option value="GBP">Libra Esterlina - Reino Unido</option>
+                            <option value="CAD">Dólar Canadense - Canadá</option>
+                            <option value="AUD">Dólar Australiano - Austrália</option>
+                            <option value="CNY">Yuan - China</option>
+                            <option value="CHF">Franco Suíço - Suíça</option>
+                            <option value="INR">Rupia - Índia</option>
+                            <option value="RUB">Rublo - Rússia</option>
+                            <option value="ZAR">Rand - África do Sul</option>
+                            <option value="KRW">Won - Coreia do Sul</option>
+                            <option value="SEK">Coroa - Suécia</option>
+                            <option value="NOK">Coroa - Noruega</option>
+                            <option value="DKK">Coroa - Dinamarca</option>
+                            <option value="SGD">Dólar - Singapura</option>
+                            <option value="HKD">Dólar - Hong Kong</option>
+                            <option value="TRY">Lira - Turquia</option>
+                            <option value="SAR">Riyal - Arábia Saudita</option>
+                            <option value="AED">Dirham - Emirados Árabes Unidos</option>
+                            <option value="ILS">Shekel - Israel</option>
+                            <option value="EGP">Libra - Egito</option>
+                            <option value="NGN">Naira - Nigéria</option>
+                            <option value="CLP">Peso - Chile</option>
+                            <option value="PEN">Sol - Peru</option>
+                            <option value="COP">Peso - Colômbia</option>
+                            <option value="UYU">Peso - Uruguai</option>
+                            <option value="PYG">Guarani - Paraguai</option>
+                            <option value="VES">Bolívar - Venezuela</option>
+                            <option value="BOB">Boliviano - Bolívia</option>
+                            <option value="DOP">Peso - República Dominicana</option>
+                            <option value="CRC">Colón - Costa Rica</option>
+                            <option value="GTQ">Quetzal - Guatemala</option>
+                            <option value="HNL">Lempira - Honduras</option>
+                            <option value="NIO">Córdoba - Nicarágua</option>
+                            <option value="BZD">Dólar - Belize</option>
+                            <option value="JMD">Dólar - Jamaica</option>
+                            <option value="BBD">Dólar - Barbados</option>
+                            <option value="TTD">Dólar - Trinidad e Tobago</option>
+                            <option value="BSD">Dólar - Bahamas</option>
+                            <option value="BMD">Dólar - Bermudas</option>
+                            <option value="KYD">Dólar - Ilhas Cayman</option>
+                            <option value="GYD">Dólar - Guiana</option>
+                            <option value="SRD">Dólar - Suriname</option>
                         </datalist>
                     </div>
                     
@@ -68,7 +143,11 @@
                     
                 </div>
                 <div class="caixa-info">
-                    {{ resultado }}
+                    {% if resultado %}
+        {{ resultado }}
+    {% else %}
+        <p style="color: red;">{{ erro }}</p>
+    {% endif %}
                 </div>
 
                 <div class="gender-inputs">
@@ -77,10 +156,11 @@
                     </div>
 
             
-            </form>
+            
             <div class="continue-button">
-                <button><a href="#">Converter</a> </button>
+                <button type="submit"><a href="#">Converter</a> </button>
             </div>
+            </form>
             <form action="/envia_email" method="POST">
             <div class="continue-button">
                 <button><a href="#">Via-email</a> </button>
