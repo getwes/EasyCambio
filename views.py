@@ -52,20 +52,33 @@ def converter():
 
 @app.route("/envia", methods=["POST"])
 def enviar_email():
+    # Dados do cliente
     nomecliente = request.form["nome"].upper()
     emailcliente = request.form["email"].upper()
 
-    mail_remetente = 'ayrtonsenna0110@gmail.com'
-    senha = 'fzro zxfk zhnq bfoq'  # Atenção: não use senhas reais em código aberto
+    # Buscar preços das criptomoedas
+    url = "https://api.coingecko.com/api/v3/simple/price"
+    params = {
+        'ids': 'bitcoin,ethereum,solana',
+        'vs_currencies': 'usd'
+    }
+    resposta = requests.get(url, params=params)
+    dados = resposta.json()
 
+    precos = ""
+    for moeda, valor in dados.items():
+        precos += f"{moeda.title()}: ${valor['usd']:.2f}\n"
+
+    # Configuração do e-mail
+    mail_remetente = 'ayrtonsenna0110@gmail.com'
+    senha = 'fzro zxfk zhnq bfoq'  # Evite deixar senhas no código
     email_destinatario = emailcliente
 
     mensagem = MIMEMultipart()
     mensagem['From'] = mail_remetente
     mensagem['To'] = email_destinatario
-    mensagem['Subject'] = 'Teste de E-mail com Python'
+    mensagem['Subject'] = 'Preços Atualizados de Criptomoedas'
 
-    # Corpo do e-mail com dados do formulário
     corpo = f"""
     Olá {nomecliente},
 
@@ -79,15 +92,13 @@ def enviar_email():
 
     mensagem.attach(MIMEText(corpo, 'plain'))
 
-    try:
-        servidor = smtplib.SMTP('smtp.gmail.com', 587)
-        servidor.starttls()
-        servidor.login(mail_remetente, senha)
-        servidor.send_message(mensagem)
-        servidor.quit()
-        print('E-mail enviado com sucesso!')
-    except Exception as e:
-        print(f'Erro ao enviar e-mail: {e}')
-    
+    # Enviar e-mail (sem try)
+    servidor = smtplib.SMTP('smtp.gmail.com', 587)
+    servidor.starttls()
+    servidor.login(mail_remetente, senha)
+    servidor.send_message(mensagem)
+    servidor.quit()
+
+    print('E-mail enviado com sucesso!')
+
     return render_template("cadastro_nome_email.html")
-    
