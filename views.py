@@ -70,8 +70,8 @@ def enviar_email():
         precos += f"{moeda.title()}: ${valor['usd']:.2f}\n"
 
     # Configuração do e-mail
-    mail_remetente = 'ayrtonsenna0110@gmail.com'
-    senha = 'fzro zxfk zhnq bfoq'  # Evite deixar senhas no código
+    mail_remetente = 'easycambiorevolutionary@gmail.com'
+    senha = 'cyzf ynbp frnw jsgq'  # Evite deixar senhas no código
     email_destinatario = emailcliente
 
     mensagem = MIMEMultipart()
