@@ -8,6 +8,10 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+#import valor da moeda digital no caso a função
+from moeda_digital import obter_precos
+
+precos = obter_precos()
 
 #funcão da moeda
 def converter_moeda(valor, de, para):
@@ -62,7 +66,17 @@ def enviar_email():
     mensagem['Subject'] = 'Teste de E-mail com Python'
 
     # Corpo do e-mail com dados do formulário
-    corpo = f'Cliente: {nomecliente}\n Mensagem automática de teste.'
+    corpo = f"""
+    Olá {nomecliente},
+
+    Aqui estão os preços atualizados das criptomoedas:
+
+    {precos}
+
+    Atenciosamente,
+    EasyCâmbio
+    """
+
     mensagem.attach(MIMEText(corpo, 'plain'))
 
     try:
