@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="input-group">
-
+                    <form action="/envia" method="POST">
                     <div class="input-box">
                         <label for="nome">Nome</label>
                         <input id="nome" type="text" name="nome"  placeholder="Digite a sigla do país">
@@ -44,8 +44,9 @@
             
            
             <div class="continue-button">
-                <button><a>Converter</a> </button>
+                <button type="submit"><a>Converter</a> </button>
             </div>
+            </form>
             
             <div class="continue-button">
                 <button><a href="{{ url_for('homepage') }}">Voltar à Home</a></button>
